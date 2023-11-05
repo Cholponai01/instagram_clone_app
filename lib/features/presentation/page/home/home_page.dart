@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_clone_app/consts.dart';
 import 'package:instagram_clone_app/features/presentation/page/post/comment/comment_page.dart';
+import 'package:instagram_clone_app/features/presentation/page/post/update_post_page.dart';
 import 'package:unicons/unicons.dart';
 
 class HomePage extends StatelessWidget {
@@ -53,10 +54,15 @@ class HomePage extends StatelessWidget {
                       )
                     ],
                   ),
-                  const Icon(
-                    Icons.more_vert,
-                    color: primaryColor,
-                  )
+                  IconButton(
+                    onPressed: () {
+                      _showBottomModalSheet(context);
+                    },
+                    icon: const Icon(
+                      Icons.more_vert,
+                      color: primaryColor,
+                    ),
+                  ),
                 ],
               ),
               sizeVer(10),
@@ -136,5 +142,80 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ));
+  }
+
+  _showBottomModalSheet(BuildContext context) {
+    return showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            height: 150,
+            decoration: BoxDecoration(
+              color: backGroundColor.withOpacity(.8),
+            ),
+            child: SingleChildScrollView(
+              child: Container(
+                margin: const EdgeInsets.symmetric(vertical: 10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(left: 10.0),
+                      child: Text(
+                        "More Options",
+                        style: TextStyle(
+                            color: primaryColor,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    sizeVer(8),
+                    const Divider(
+                      thickness: 1,
+                      color: secondaryColor,
+                    ),
+                    sizeVer(8),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 10.0),
+                      child: Text(
+                        "Delete Post",
+                        style: TextStyle(
+                            color: primaryColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    sizeVer(7),
+                    const Divider(
+                      thickness: 1,
+                      color: secondaryColor,
+                    ),
+                    sizeVer(7),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const UpdatePostPage(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          "Update Post",
+                          style: TextStyle(
+                              color: primaryColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        });
   }
 }
