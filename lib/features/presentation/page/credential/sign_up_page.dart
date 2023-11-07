@@ -45,7 +45,7 @@ class SignUpPage extends StatelessWidget {
                       bottom: -15,
                       child: IconButton(
                           onPressed: () {},
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.add_a_photo,
                             color: blueColor,
                           )))
@@ -93,10 +93,9 @@ class SignUpPage extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignInPage()),
-                        (route) => false);
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, PageConst.signInPage, (route) => false);
+                    // Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => SignInPage()),(route) => false);
                   },
                   child: const Text(
                     "Sign In",

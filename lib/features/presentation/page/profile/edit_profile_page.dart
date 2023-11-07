@@ -33,7 +33,7 @@ class EditProfilePage extends StatelessWidget {
                 color: blueColor,
                 size: 32,
               ),
-            )
+            ),
           ],
         ),
         body: Padding(

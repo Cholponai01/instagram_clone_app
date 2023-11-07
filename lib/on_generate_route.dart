@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone_app/consts.dart';
+import 'package:instagram_clone_app/features/presentation/page/credential/sign_in_page.dart';
+import 'package:instagram_clone_app/features/presentation/page/credential/sign_up_page.dart';
+import 'package:instagram_clone_app/features/presentation/page/post/comment/comment_page.dart';
+import 'package:instagram_clone_app/features/presentation/page/post/update_post_page.dart';
 import 'package:instagram_clone_app/features/presentation/page/profile/edit_profile_page.dart';
 
 class OnGenerateRoute {
@@ -6,9 +11,25 @@ class OnGenerateRoute {
     final args = settings.arguments;
 
     switch (settings.name) {
-      case "editProfilePage":
+      case PageConst.editProfilePage:
         {
-          return routeBuilder(EditProfilePage());
+          return routeBuilder(const EditProfilePage());
+        }
+      case PageConst.updatePostPage:
+        {
+          return routeBuilder(const UpdatePostPage());
+        }
+      case PageConst.commentPage:
+        {
+          return routeBuilder(const CommentPage());
+        }
+      case PageConst.signInPage:
+        {
+          return routeBuilder(const SignInPage());
+        }
+      case PageConst.signUpPage:
+        {
+          return routeBuilder(const SignUpPage());
         }
       default:
         {
@@ -29,9 +50,9 @@ class NoPageFound extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("page not found"),
+        title: const Text("page not found"),
       ),
-      body: Center(
+      body: const Center(
         child: Text("page not found"),
       ),
     );

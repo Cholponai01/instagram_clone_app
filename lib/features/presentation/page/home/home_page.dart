@@ -81,12 +81,8 @@ class HomePage extends StatelessWidget {
                       sizeHor(10),
                       IconButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const CommentPage(),
-                              ),
-                            );
+                            Navigator.pushNamed(context, PageConst.commentPage);
+                            //  Navigator.push(context, MaterialPageRoute( builder: (context) => const CommentPage(), ), );
                           },
                           icon: const Icon(Icons.message_rounded,
                               color: primaryColor)),
@@ -195,12 +191,9 @@ class HomePage extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 10.0),
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const UpdatePostPage(),
-                            ),
-                          );
+                          Navigator.pushNamed(
+                              context, PageConst.updatePostPage);
+                          // Navigator.push( context,MaterialPageRoute( builder: (context) => const UpdatePostPage(),),);
                         },
                         child: const Text(
                           "Update Post",
