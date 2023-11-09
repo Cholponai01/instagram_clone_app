@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone_app/features/presentation/page/main_screen/main_screen.dart';
 import 'package:instagram_clone_app/on_generate_route.dart';
 
-void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    await Firebase.initializeApp();
+  } catch (e) {
+    print("Firebase initialize hatası: $e");
+  }
   runApp(const MyApp());
 }
 
