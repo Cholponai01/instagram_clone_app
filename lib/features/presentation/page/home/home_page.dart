@@ -1,12 +1,27 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_clone_app/consts.dart';
+import 'package:instagram_clone_app/features/domain/usecases/firebase_usecases/user/get_current_uid_usecase.dart';
 import 'package:instagram_clone_app/features/presentation/page/post/comment/comment_page.dart';
 import 'package:instagram_clone_app/features/presentation/page/post/update_post_page.dart';
 import 'package:unicons/unicons.dart';
+import 'package:instagram_clone_app/injection_container.dart' as di;
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    di.sl<GetCurrentUidUseCase>().call().then((value) {});
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

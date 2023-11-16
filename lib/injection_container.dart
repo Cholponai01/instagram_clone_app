@@ -17,6 +17,7 @@ import 'package:instagram_clone_app/features/domain/usecases/firebase_usecases/u
 import 'package:instagram_clone_app/features/presentation/cubit/auth/cubit/auth_cubit.dart';
 import 'package:instagram_clone_app/features/presentation/cubit/credential/cubit/credential_cubit.dart';
 import 'package:instagram_clone_app/features/presentation/cubit/user/cubit/user_cubit.dart';
+import 'package:instagram_clone_app/features/presentation/cubit/user/get_single_user/cubit/get_single_user_cubit.dart';
 
 final sl = GetIt.instance;
 
@@ -41,6 +42,12 @@ Future<void> init() async {
     () => UserCubit(
       updateUserUseCase: sl.call(),
       getUsersUseCase: sl.call(),
+    ),
+  );
+
+  sl.registerFactory(
+    () => GetSingleUserCubit(
+      getSingleUserUseCase: sl.call(),
     ),
   );
   //Use Cases
