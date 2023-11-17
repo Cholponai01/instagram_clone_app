@@ -13,11 +13,11 @@ import 'injection_container.dart' as di;
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await di.init();
-  // try {
-  //   await Firebase.initializeApp();
-  // } catch (e) {
-  //   print("Firebase initialize hatası: $e");
-  // }
+  try {
+    await Firebase.initializeApp();
+  } catch (e) {
+    print("Firebase initialize hatası: $e");
+  }
   runApp(const MyApp());
 }
 
