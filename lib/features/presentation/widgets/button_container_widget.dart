@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone_app/consts.dart';
+import 'package:instagram_clone_app/config/app_colors.dart';
 
 class ButtonContainerWidget extends StatelessWidget {
   final Color? color;
@@ -23,7 +23,7 @@ class ButtonContainerWidget extends StatelessWidget {
             child: Text(
               "$text",
               style: const TextStyle(
-                  color: primaryColor, fontWeight: FontWeight.w600),
+                  color: AppColors.primaryColor, fontWeight: FontWeight.w600),
             ),
           ),
         ));

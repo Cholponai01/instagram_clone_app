@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone_app/consts.dart';
+import 'package:instagram_clone_app/config/app_colors.dart';
 
 class ActivityPage extends StatelessWidget {
   const ActivityPage({super.key});
@@ -7,12 +7,12 @@ class ActivityPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backGroundColor,
+      backgroundColor: AppColors.backGroundColor,
       appBar: AppBar(
-        backgroundColor: backGroundColor,
+        backgroundColor: AppColors.backGroundColor,
         title: const Text(
           "Activity",
-          style: TextStyle(color: primaryColor),
+          style: TextStyle(color: AppColors.primaryColor),
         ),
       ),
     );

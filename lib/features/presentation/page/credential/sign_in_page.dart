@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:instagram_clone_app/config/app_colors.dart';
+import 'package:instagram_clone_app/config/sized_func.dart';
 import 'package:instagram_clone_app/consts.dart';
-import 'package:instagram_clone_app/features/presentation/page/credential/sign_up_page.dart';
 import 'package:instagram_clone_app/features/presentation/widgets/button_container_widget.dart';
 import 'package:instagram_clone_app/features/presentation/widgets/form_container_widget.dart';
 
@@ -11,7 +12,7 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backGroundColor,
+      backgroundColor: AppColors.backGroundColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
         child: Column(
@@ -24,7 +25,7 @@ class SignInPage extends StatelessWidget {
             Center(
               child: SvgPicture.asset(
                 "assets/ic_instagram.svg",
-                color: primaryColor,
+                color: AppColors.primaryColor,
               ),
             ),
             sizeVer(30),
@@ -38,7 +39,7 @@ class SignInPage extends StatelessWidget {
             ),
             sizeVer(15),
             ButtonContainerWidget(
-              color: blueColor,
+              color: AppColors.blueColor,
               text: "Sign In",
               onTapListener: () {},
             ),
@@ -47,7 +48,7 @@ class SignInPage extends StatelessWidget {
               flex: 2,
             ),
             const Divider(
-              color: secondaryColor,
+              color: AppColors.secondaryColor,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +56,7 @@ class SignInPage extends StatelessWidget {
                 const Text(
                   "Don't have an account?",
                   style: TextStyle(
-                    color: primaryColor,
+                    color: AppColors.primaryColor,
                   ),
                 ),
                 InkWell(
@@ -67,7 +68,8 @@ class SignInPage extends StatelessWidget {
                   child: const Text(
                     "Sign Up",
                     style: TextStyle(
-                        color: primaryColor, fontWeight: FontWeight.bold),
+                        color: AppColors.primaryColor,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ],

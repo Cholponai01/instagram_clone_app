@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:instagram_clone_app/consts.dart';
+import 'package:instagram_clone_app/config/app_colors.dart';
 
 class PageConst {
   static const String editProfilePage = "editProfilePage";
@@ -23,7 +23,7 @@ void toast(String message) {
       toastLength: Toast.LENGTH_LONG,
       gravity: ToastGravity.BOTTOM,
       timeInSecForIosWeb: 1,
-      backgroundColor: blueColor,
+      backgroundColor: AppColors.blueColor,
       textColor: Colors.white,
       fontSize: 16.0);
 }

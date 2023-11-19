@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone_app/consts.dart';
+import 'package:instagram_clone_app/config/app_colors.dart';
+import 'package:instagram_clone_app/config/sized_func.dart';
 import 'package:instagram_clone_app/features/presentation/widgets/form_container_widget.dart';
 
 class CommentPage extends StatefulWidget {
@@ -14,18 +15,18 @@ class _CommentPageState extends State<CommentPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backGroundColor,
+      backgroundColor: AppColors.backGroundColor,
       appBar: AppBar(
-        backgroundColor: backGroundColor,
+        backgroundColor: AppColors.backGroundColor,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(Icons.arrow_back, color: primaryColor),
+          icon: const Icon(Icons.arrow_back, color: AppColors.primaryColor),
         ),
         title: const Text(
           "Comments",
-          style: TextStyle(color: primaryColor),
+          style: TextStyle(color: AppColors.primaryColor),
         ),
       ),
       body: Column(
@@ -43,13 +44,14 @@ class _CommentPageState extends State<CommentPage> {
                       width: 40,
                       height: 40,
                       decoration: const BoxDecoration(
-                          color: secondaryColor, shape: BoxShape.circle),
+                          color: AppColors.secondaryColor,
+                          shape: BoxShape.circle),
                     ),
                     sizeHor(15),
                     const Text(
                       "Username",
                       style: TextStyle(
-                          color: primaryColor,
+                          color: AppColors.primaryColor,
                           fontSize: 15,
                           fontWeight: FontWeight.bold),
                     ),
@@ -58,14 +60,14 @@ class _CommentPageState extends State<CommentPage> {
                 sizeVer(10),
                 const Text(
                   "This is vey beautiful place",
-                  style: TextStyle(color: primaryColor),
+                  style: TextStyle(color: AppColors.primaryColor),
                 ),
               ],
             ),
           ),
           sizeVer(10),
           const Divider(
-            color: secondaryColor,
+            color: AppColors.secondaryColor,
           ),
           sizeVer(10),
           Expanded(
@@ -78,7 +80,8 @@ class _CommentPageState extends State<CommentPage> {
                     width: 40,
                     height: 40,
                     decoration: const BoxDecoration(
-                        color: secondaryColor, shape: BoxShape.circle),
+                        color: AppColors.secondaryColor,
+                        shape: BoxShape.circle),
                   ),
                   sizeHor(10),
                   Expanded(
@@ -93,18 +96,18 @@ class _CommentPageState extends State<CommentPage> {
                               Text(
                                 "Username",
                                 style: TextStyle(
-                                    color: primaryColor,
+                                    color: AppColors.primaryColor,
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold),
                               ),
                               Icon(Icons.favorite_outline,
-                                  size: 20, color: darkGreyColor),
+                                  size: 20, color: AppColors.darkGreyColor),
                             ],
                           ),
                           sizeVer(4),
                           const Text(
                             "This is comment",
-                            style: TextStyle(color: primaryColor),
+                            style: TextStyle(color: AppColors.primaryColor),
                           ),
                           sizeVer(4),
                           Row(
@@ -112,7 +115,7 @@ class _CommentPageState extends State<CommentPage> {
                               const Text(
                                 "05/11/2023",
                                 style: TextStyle(
-                                  color: darkGreyColor,
+                                  color: AppColors.darkGreyColor,
                                   fontSize: 12,
                                 ),
                               ),
@@ -126,7 +129,7 @@ class _CommentPageState extends State<CommentPage> {
                                 child: const Text(
                                   "Replay",
                                   style: TextStyle(
-                                    color: darkGreyColor,
+                                    color: AppColors.darkGreyColor,
                                     fontSize: 12,
                                   ),
                                 ),
@@ -135,7 +138,7 @@ class _CommentPageState extends State<CommentPage> {
                               const Text(
                                 "View Replays",
                                 style: TextStyle(
-                                  color: darkGreyColor,
+                                  color: AppColors.darkGreyColor,
                                   fontSize: 12,
                                 ),
                               ),
@@ -153,7 +156,7 @@ class _CommentPageState extends State<CommentPage> {
                                     const Text(
                                       "Post",
                                       style: TextStyle(
-                                        color: blueColor,
+                                        color: AppColors.blueColor,
                                       ),
                                     ),
                                   ],
@@ -189,24 +192,24 @@ class _CommentPageState extends State<CommentPage> {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                color: secondaryColor,
+                color: AppColors.secondaryColor,
                 borderRadius: BorderRadius.circular(20),
               ),
             ),
             sizeHor(10),
             Expanded(
               child: TextFormField(
-                style: const TextStyle(color: primaryColor),
+                style: const TextStyle(color: AppColors.primaryColor),
                 decoration: const InputDecoration(
                   border: InputBorder.none,
                   hintText: "Post your comment...",
-                  hintStyle: TextStyle(color: secondaryColor),
+                  hintStyle: TextStyle(color: AppColors.secondaryColor),
                 ),
               ),
             ),
             const Text(
               "Post",
-              style: TextStyle(fontSize: 15, color: blueColor),
+              style: TextStyle(fontSize: 15, color: AppColors.blueColor),
             ),
           ],
         ),

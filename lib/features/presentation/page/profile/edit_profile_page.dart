@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone_app/consts.dart';
+import 'package:instagram_clone_app/config/app_colors.dart';
+import 'package:instagram_clone_app/config/sized_func.dart';
 import 'package:instagram_clone_app/features/presentation/page/profile/widget/profile_form_widget.dart';
 
 class EditProfilePage extends StatelessWidget {
@@ -8,12 +9,12 @@ class EditProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: backGroundColor,
+        backgroundColor: AppColors.backGroundColor,
         appBar: AppBar(
-          backgroundColor: backGroundColor,
+          backgroundColor: AppColors.backGroundColor,
           title: const Text(
             "Edit Profile",
-            style: TextStyle(color: primaryColor),
+            style: TextStyle(color: AppColors.primaryColor),
           ),
           leading: IconButton(
             onPressed: () {
@@ -21,7 +22,7 @@ class EditProfilePage extends StatelessWidget {
             },
             icon: const Icon(
               Icons.close,
-              color: primaryColor,
+              color: AppColors.primaryColor,
               size: 32,
             ),
           ),
@@ -30,7 +31,7 @@ class EditProfilePage extends StatelessWidget {
               padding: EdgeInsets.only(right: 10.0),
               child: Icon(
                 Icons.done,
-                color: blueColor,
+                color: AppColors.blueColor,
                 size: 32,
               ),
             ),
@@ -46,7 +47,7 @@ class EditProfilePage extends StatelessWidget {
                     width: 120,
                     height: 120,
                     decoration: BoxDecoration(
-                      color: secondaryColor,
+                      color: AppColors.secondaryColor,
                       borderRadius: BorderRadius.circular(60),
                     ),
                   ),
@@ -56,7 +57,7 @@ class EditProfilePage extends StatelessWidget {
                   child: Text(
                     "Change profile photo",
                     style: TextStyle(
-                        color: blueColor,
+                        color: AppColors.blueColor,
                         fontSize: 20,
                         fontWeight: FontWeight.w400),
                   ),

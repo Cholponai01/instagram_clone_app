@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone_app/consts.dart';
+import 'package:instagram_clone_app/config/app_colors.dart';
+import 'package:instagram_clone_app/config/sized_func.dart';
 import 'package:instagram_clone_app/features/presentation/page/search/widget/search_widget.dart';
 
 class SearchPage extends StatefulWidget {
@@ -22,7 +23,7 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: backGroundColor,
+          backgroundColor: AppColors.backGroundColor,
           body: Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
@@ -44,7 +45,7 @@ class _SearchPageState extends State<SearchPage> {
                         return Container(
                           width: 100,
                           height: 100,
-                          color: secondaryColor,
+                          color: AppColors.secondaryColor,
                         );
                       }),
                 ],

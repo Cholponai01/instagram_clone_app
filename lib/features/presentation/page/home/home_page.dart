@@ -1,11 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:instagram_clone_app/config/app_colors.dart';
+import 'package:instagram_clone_app/config/sized_func.dart';
 import 'package:instagram_clone_app/consts.dart';
 import 'package:instagram_clone_app/features/domain/usecases/firebase_usecases/user/get_current_uid_usecase.dart';
-import 'package:instagram_clone_app/features/presentation/page/post/comment/comment_page.dart';
-import 'package:instagram_clone_app/features/presentation/page/post/update_post_page.dart';
 import 'package:unicons/unicons.dart';
 import 'package:instagram_clone_app/injection_container.dart' as di;
 
@@ -26,12 +24,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: backGroundColor,
+        backgroundColor: AppColors.backGroundColor,
         appBar: AppBar(
-          backgroundColor: backGroundColor,
+          backgroundColor: AppColors.backGroundColor,
           title: SvgPicture.asset(
             "assets/ic_instagram.svg",
-            color: primaryColor,
+            color: AppColors.primaryColor,
             height: 32,
           ),
           actions: [
@@ -41,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {},
                   icon: const Icon(
                     UniconsLine.facebook_messenger_alt,
-                    color: primaryColor,
+                    color: AppColors.primaryColor,
                   )),
             )
           ],
@@ -60,12 +58,13 @@ class _HomePageState extends State<HomePage> {
                         width: 30,
                         height: 30,
                         decoration: const BoxDecoration(
-                            color: secondaryColor, shape: BoxShape.circle),
+                            color: AppColors.secondaryColor,
+                            shape: BoxShape.circle),
                       ),
                       sizeHor(10),
                       const Text(
                         "Username",
-                        style: TextStyle(color: primaryColor),
+                        style: TextStyle(color: AppColors.primaryColor),
                       )
                     ],
                   ),
@@ -75,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                     },
                     icon: const Icon(
                       Icons.more_vert,
-                      color: primaryColor,
+                      color: AppColors.primaryColor,
                     ),
                   ),
                 ],
@@ -84,7 +83,7 @@ class _HomePageState extends State<HomePage> {
               Container(
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.30,
-                color: secondaryColor,
+                color: AppColors.secondaryColor,
               ),
               sizeVer(10),
               Row(
@@ -92,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Row(
                     children: [
-                      const Icon(Icons.favorite, color: primaryColor),
+                      const Icon(Icons.favorite, color: AppColors.primaryColor),
                       sizeHor(10),
                       IconButton(
                           onPressed: () {
@@ -100,20 +99,22 @@ class _HomePageState extends State<HomePage> {
                             //  Navigator.push(context, MaterialPageRoute( builder: (context) => const CommentPage(), ), );
                           },
                           icon: const Icon(Icons.message_rounded,
-                              color: primaryColor)),
+                              color: AppColors.primaryColor)),
                       sizeHor(10),
-                      const Icon(Icons.send_rounded, color: primaryColor),
+                      const Icon(Icons.send_rounded,
+                          color: AppColors.primaryColor),
                       sizeHor(10),
                     ],
                   ),
-                  const Icon(Icons.bookmark_border, color: primaryColor),
+                  const Icon(Icons.bookmark_border,
+                      color: AppColors.primaryColor),
                 ],
               ),
               sizeVer(10),
               const Text(
                 "51 likes",
                 style: TextStyle(
-                  color: primaryColor,
+                  color: AppColors.primaryColor,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -123,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                   const Text(
                     "Username",
                     style: TextStyle(
-                      color: primaryColor,
+                      color: AppColors.primaryColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -131,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                   const Text(
                     "some description",
                     style: TextStyle(
-                      color: primaryColor,
+                      color: AppColors.primaryColor,
                     ),
                   ),
                 ],
@@ -140,14 +141,14 @@ class _HomePageState extends State<HomePage> {
               const Text(
                 "View all 10 comments",
                 style: TextStyle(
-                  color: secondaryColor,
+                  color: AppColors.secondaryColor,
                 ),
               ),
               sizeVer(10),
               const Text(
                 "05/11/2023",
                 style: TextStyle(
-                  color: secondaryColor,
+                  color: AppColors.secondaryColor,
                 ),
               )
             ],
@@ -162,7 +163,7 @@ class _HomePageState extends State<HomePage> {
           return Container(
             height: 150,
             decoration: BoxDecoration(
-              color: backGroundColor.withOpacity(.8),
+              color: AppColors.backGroundColor.withOpacity(.8),
             ),
             child: SingleChildScrollView(
               child: Container(
@@ -175,7 +176,7 @@ class _HomePageState extends State<HomePage> {
                       child: Text(
                         "More Options",
                         style: TextStyle(
-                            color: primaryColor,
+                            color: AppColors.primaryColor,
                             fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),
@@ -183,7 +184,7 @@ class _HomePageState extends State<HomePage> {
                     sizeVer(8),
                     const Divider(
                       thickness: 1,
-                      color: secondaryColor,
+                      color: AppColors.secondaryColor,
                     ),
                     sizeVer(8),
                     const Padding(
@@ -191,7 +192,7 @@ class _HomePageState extends State<HomePage> {
                       child: Text(
                         "Delete Post",
                         style: TextStyle(
-                            color: primaryColor,
+                            color: AppColors.primaryColor,
                             fontSize: 16,
                             fontWeight: FontWeight.w500),
                       ),
@@ -199,7 +200,7 @@ class _HomePageState extends State<HomePage> {
                     sizeVer(7),
                     const Divider(
                       thickness: 1,
-                      color: secondaryColor,
+                      color: AppColors.secondaryColor,
                     ),
                     sizeVer(7),
                     Padding(
@@ -213,7 +214,7 @@ class _HomePageState extends State<HomePage> {
                         child: const Text(
                           "Update Post",
                           style: TextStyle(
-                              color: primaryColor,
+                              color: AppColors.primaryColor,
                               fontSize: 18,
                               fontWeight: FontWeight.w500),
                         ),

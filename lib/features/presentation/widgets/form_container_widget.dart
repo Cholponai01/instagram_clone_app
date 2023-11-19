@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone_app/consts.dart';
+import 'package:instagram_clone_app/config/app_colors.dart';
 
 class FormContainerWidget extends StatefulWidget {
   final TextEditingController? controller;
@@ -37,12 +37,12 @@ class _FormContainerWidgetState extends State<FormContainerWidget> {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: secondaryColor.withOpacity(.35),
+        color: AppColors.secondaryColor.withOpacity(.35),
         borderRadius: BorderRadius.circular(3),
       ),
       child: TextFormField(
         style: const TextStyle(
-          color: primaryColor,
+          color: AppColors.primaryColor,
         ),
         controller: widget.controller,
         keyboardType: widget.inputType,
@@ -55,7 +55,7 @@ class _FormContainerWidgetState extends State<FormContainerWidget> {
           border: InputBorder.none,
           filled: true,
           hintText: widget.hintText,
-          hintStyle: const TextStyle(color: secondaryColor),
+          hintStyle: const TextStyle(color: AppColors.secondaryColor),
           suffixIcon: GestureDetector(
             onTap: () {
               setState(() {
@@ -65,7 +65,9 @@ class _FormContainerWidgetState extends State<FormContainerWidget> {
             child: widget.isPasswordField == true
                 ? Icon(
                     _obscureText ? Icons.visibility_off : Icons.visibility,
-                    color: _obscureText == false ? blueColor : secondaryColor,
+                    color: _obscureText == false
+                        ? AppColors.blueColor
+                        : AppColors.secondaryColor,
                   )
                 : const Text(""),
           ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone_app/consts.dart';
+import 'package:instagram_clone_app/config/app_colors.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({super.key, required this.controller});
@@ -11,17 +11,17 @@ class SearchWidget extends StatelessWidget {
         width: double.infinity,
         height: 45,
         decoration: BoxDecoration(
-          color: secondaryColor.withOpacity(.3),
+          color: AppColors.secondaryColor.withOpacity(.3),
           borderRadius: BorderRadius.circular(15),
         ),
         child: TextFormField(
           controller: controller,
-          style: const TextStyle(color: primaryColor),
+          style: const TextStyle(color: AppColors.primaryColor),
           decoration: const InputDecoration(
             border: InputBorder.none,
-            prefixIcon: Icon(Icons.search, color: primaryColor),
+            prefixIcon: Icon(Icons.search, color: AppColors.primaryColor),
             hintText: "Search",
-            hintStyle: TextStyle(color: secondaryColor, fontSize: 15),
+            hintStyle: TextStyle(color: AppColors.secondaryColor, fontSize: 15),
           ),
         ));
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone_app/config/app_colors.dart';
+import 'package:instagram_clone_app/config/sized_func.dart';
 import 'package:instagram_clone_app/consts.dart';
-import 'package:instagram_clone_app/features/presentation/page/profile/edit_profile_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -8,12 +9,12 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backGroundColor,
+      backgroundColor: AppColors.backGroundColor,
       appBar: AppBar(
-        backgroundColor: backGroundColor,
+        backgroundColor: AppColors.backGroundColor,
         title: const Text(
           "Username",
-          style: TextStyle(color: primaryColor),
+          style: TextStyle(color: AppColors.primaryColor),
         ),
         actions: [
           Padding(
@@ -24,7 +25,7 @@ class ProfilePage extends StatelessWidget {
               },
               icon: const Icon(
                 Icons.menu,
-                color: primaryColor,
+                color: AppColors.primaryColor,
               ),
             ),
           ),
@@ -43,7 +44,7 @@ class ProfilePage extends StatelessWidget {
                     width: 80,
                     height: 80,
                     decoration: const BoxDecoration(
-                      color: secondaryColor,
+                      color: AppColors.secondaryColor,
                       shape: BoxShape.circle,
                     ),
                   ),
@@ -54,13 +55,13 @@ class ProfilePage extends StatelessWidget {
                           const Text(
                             "0",
                             style: TextStyle(
-                                color: primaryColor,
+                                color: AppColors.primaryColor,
                                 fontWeight: FontWeight.bold),
                           ),
                           sizeVer(8),
                           const Text(
                             "Posts",
-                            style: TextStyle(color: primaryColor),
+                            style: TextStyle(color: AppColors.primaryColor),
                           ),
                         ],
                       ),
@@ -70,13 +71,13 @@ class ProfilePage extends StatelessWidget {
                           const Text(
                             "54",
                             style: TextStyle(
-                                color: primaryColor,
+                                color: AppColors.primaryColor,
                                 fontWeight: FontWeight.bold),
                           ),
                           sizeVer(8),
                           const Text(
                             "Followers",
-                            style: TextStyle(color: primaryColor),
+                            style: TextStyle(color: AppColors.primaryColor),
                           ),
                         ],
                       ),
@@ -86,13 +87,13 @@ class ProfilePage extends StatelessWidget {
                           const Text(
                             "45",
                             style: TextStyle(
-                                color: primaryColor,
+                                color: AppColors.primaryColor,
                                 fontWeight: FontWeight.bold),
                           ),
                           sizeVer(8),
                           const Text(
                             "Following",
-                            style: TextStyle(color: primaryColor),
+                            style: TextStyle(color: AppColors.primaryColor),
                           ),
                         ],
                       ),
@@ -103,14 +104,14 @@ class ProfilePage extends StatelessWidget {
               sizeVer(10),
               const Text(
                 "Name",
-                style:
-                    TextStyle(color: primaryColor, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: AppColors.primaryColor, fontWeight: FontWeight.bold),
               ),
               sizeVer(10),
               const Text(
                 "The bio of user",
                 style: TextStyle(
-                  color: primaryColor,
+                  color: AppColors.primaryColor,
                 ),
               ),
               sizeVer(10),
@@ -126,7 +127,7 @@ class ProfilePage extends StatelessWidget {
                     return Container(
                       width: 100,
                       height: 100,
-                      color: secondaryColor,
+                      color: AppColors.secondaryColor,
                     );
                   }),
             ],
@@ -143,7 +144,7 @@ class ProfilePage extends StatelessWidget {
           return Container(
             height: 150,
             decoration: BoxDecoration(
-              color: backGroundColor.withOpacity(.8),
+              color: AppColors.backGroundColor.withOpacity(.8),
             ),
             child: SingleChildScrollView(
               child: Container(
@@ -156,7 +157,7 @@ class ProfilePage extends StatelessWidget {
                       child: Text(
                         "More Options",
                         style: TextStyle(
-                            color: primaryColor,
+                            color: AppColors.primaryColor,
                             fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),
@@ -164,7 +165,7 @@ class ProfilePage extends StatelessWidget {
                     sizeVer(8),
                     const Divider(
                       thickness: 1,
-                      color: secondaryColor,
+                      color: AppColors.secondaryColor,
                     ),
                     sizeVer(8),
                     Padding(
@@ -178,7 +179,7 @@ class ProfilePage extends StatelessWidget {
                         child: const Text(
                           "Edit Profile",
                           style: TextStyle(
-                              color: primaryColor,
+                              color: AppColors.primaryColor,
                               fontSize: 16,
                               fontWeight: FontWeight.w500),
                         ),
@@ -187,7 +188,7 @@ class ProfilePage extends StatelessWidget {
                     sizeVer(7),
                     const Divider(
                       thickness: 1,
-                      color: secondaryColor,
+                      color: AppColors.secondaryColor,
                     ),
                     sizeVer(7),
                     const Padding(
@@ -195,7 +196,7 @@ class ProfilePage extends StatelessWidget {
                       child: Text(
                         "Logout",
                         style: TextStyle(
-                            color: primaryColor,
+                            color: AppColors.primaryColor,
                             fontSize: 18,
                             fontWeight: FontWeight.w500),
                       ),

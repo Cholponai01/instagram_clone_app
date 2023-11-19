@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone_app/consts.dart';
+import 'package:instagram_clone_app/config/app_colors.dart';
+import 'package:instagram_clone_app/config/sized_func.dart';
 
 class ProfileFormWidget extends StatelessWidget {
   const ProfileFormWidget({super.key, this.controller, this.title});
@@ -14,17 +15,18 @@ class ProfileFormWidget extends StatelessWidget {
       children: [
         Text(
           "$title",
-          style: const TextStyle(color: primaryColor, fontSize: 16),
+          style: const TextStyle(color: AppColors.primaryColor, fontSize: 16),
         ),
         sizeVer(10),
         TextFormField(
-          style: const TextStyle(color: primaryColor),
+          style: const TextStyle(color: AppColors.primaryColor),
           decoration: const InputDecoration(
             border: InputBorder.none,
-            labelStyle: TextStyle(color: primaryColor),
+            labelStyle: TextStyle(color: AppColors.primaryColor),
           ),
         ),
-        Container(width: double.infinity, height: 1, color: secondaryColor)
+        Container(
+            width: double.infinity, height: 1, color: AppColors.secondaryColor)
       ],
     );
   }

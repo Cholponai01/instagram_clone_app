@@ -7,11 +7,3 @@ class AppColors {
   static const secondaryColor = Colors.grey;
   static const darkGreyColor = Color.fromRGBO(97, 97, 97, 1);
 }
-
-Widget sizeVer(double height) {
-  return SizedBox(height: height);
-}
-
-Widget sizeHor(double width) {
-  return SizedBox(width: width);
-}

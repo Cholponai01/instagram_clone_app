@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone_app/consts.dart';
+import 'package:instagram_clone_app/config/app_colors.dart';
+import 'package:instagram_clone_app/config/sized_func.dart';
 import 'package:instagram_clone_app/features/presentation/page/profile/widget/profile_form_widget.dart';
 
 class UpdatePostPage extends StatelessWidget {
@@ -8,25 +9,25 @@ class UpdatePostPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backGroundColor,
+      backgroundColor: AppColors.backGroundColor,
       appBar: AppBar(
-        backgroundColor: backGroundColor,
+        backgroundColor: AppColors.backGroundColor,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(Icons.arrow_back, color: primaryColor),
+          icon: const Icon(Icons.arrow_back, color: AppColors.primaryColor),
         ),
         title: const Text(
           "Edit Post",
-          style: TextStyle(color: primaryColor),
+          style: TextStyle(color: AppColors.primaryColor),
         ),
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 10.0),
             child: Icon(
               Icons.done,
-              color: blueColor,
+              color: AppColors.blueColor,
               size: 28,
             ),
           ),
@@ -41,13 +42,13 @@ class UpdatePostPage extends StatelessWidget {
                 width: 100,
                 height: 100,
                 decoration: const BoxDecoration(
-                    color: secondaryColor, shape: BoxShape.circle),
+                    color: AppColors.secondaryColor, shape: BoxShape.circle),
               ),
               sizeVer(10),
               const Text(
                 "Username",
                 style: TextStyle(
-                    color: primaryColor,
+                    color: AppColors.primaryColor,
                     fontSize: 16,
                     fontWeight: FontWeight.bold),
               ),
@@ -56,11 +57,11 @@ class UpdatePostPage extends StatelessWidget {
                 width: double.infinity,
                 height: 200,
                 decoration: const BoxDecoration(
-                  color: secondaryColor,
+                  color: AppColors.secondaryColor,
                 ),
               ),
               sizeVer(10),
-              ProfileFormWidget(
+              const ProfileFormWidget(
                 title: "Description",
               )
             ],
