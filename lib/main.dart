@@ -7,16 +7,15 @@ import 'package:instagram_clone_app/features/presentation/cubit/user/cubit/user_
 import 'package:instagram_clone_app/features/presentation/cubit/user/get_single_user/cubit/get_single_user_cubit.dart';
 import 'package:instagram_clone_app/features/presentation/page/credential/sign_in_page.dart';
 import 'package:instagram_clone_app/features/presentation/page/main_screen/main_screen.dart';
+import 'package:instagram_clone_app/firebase_options.dart';
 import 'package:instagram_clone_app/on_generate_route.dart';
 import 'injection_container.dart' as di;
 
-Future main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  try {
-    await Firebase.initializeApp();
-  } catch (e) {
-    print("Firebase initialize hatası: $e");
-  }
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await di.init();
   runApp(const MyApp());
 }

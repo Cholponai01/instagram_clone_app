@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone_app/config/app_colors.dart';
 import 'package:instagram_clone_app/features/presentation/page/activity/activity_page.dart';
