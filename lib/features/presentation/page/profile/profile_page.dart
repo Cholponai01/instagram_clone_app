@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram_clone_app/config/app_colors.dart';
 import 'package:instagram_clone_app/config/sized_func.dart';
 import 'package:instagram_clone_app/consts.dart';
+import 'package:instagram_clone_app/features/presentation/cubit/auth/cubit/auth_cubit.dart';
+import 'package:instagram_clone_app/features/presentation/page/credential/sign_in_page.dart';
+import 'package:instagram_clone_app/features/presentation/page/credential/sign_in_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -191,14 +195,21 @@ class ProfilePage extends StatelessWidget {
                       color: AppColors.secondaryColor,
                     ),
                     sizeVer(7),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 10.0),
-                      child: Text(
-                        "Logout",
-                        style: TextStyle(
-                            color: AppColors.primaryColor,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: InkWell(
+                        onTap: () {
+                          BlocProvider.of<AuthCubit>(context).loggedOut();
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, PageConst.signInPage, (route) => false);
+                        },
+                        child: const Text(
+                          "Logout",
+                          style: TextStyle(
+                              color: AppColors.primaryColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500),
+                        ),
                       ),
                     ),
                   ],
